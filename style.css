@@ -1,7 +1,10 @@
 :root {
+  --heading-font-size: clamp(24px, 4vw, 36px);
   --container-width: 1000px;
   --primary-btn-color: #d9534f;
+  --primary-btn-color-hover: #c2332e;
   --secondary-btn-color: #428bca;
+  --secondary-btn-color-hover: #2670b1;
   --text-color-white: #fff;
   --text-color-black: #000;
   --border-radius-btn: 5px;
@@ -20,8 +23,34 @@
 }
 
 h1 {
+  font-size: var(--heading-font-size);
   font-weight: 500;
 }
+button {
+  cursor: pointer;
+}
+input,
+select,
+textarea {
+  padding: 12px 18px;
+  border-radius: var(--border-radius-btn);
+  border-color: var(--border-color-btn);
+  border-width: var(--border-width-btn);
+  min-height: 47px;
+}
+input:disabled {
+  background: transparent;
+}
+input::placeholder {
+  color: var(--text-color-black);
+}
+
+/* Utilities */
+.container {
+  max-width: var(--container-width);
+  margin: auto;
+}
+
 .border-0 {
   border: none;
 }
@@ -48,32 +77,10 @@ h1 {
 .mb-40 {
   margin-bottom: 40px;
 }
-form span {
-  display: inline-block;
-  min-width: 100px;
-}
-input,
-select,
-textarea {
-  padding: 12px 18px;
-  border-radius: var(--border-radius-btn);
-  border-color: var(--border-color-btn);
-  border-width: var(--border-width-btn);
-  min-height: 47px;
-}
-input:disabled {
-  background: transparent;
-}
-input::placeholder {
-  color: var(--text-color-black);
+.me-10 {
+  margin-right: 10px;
 }
 
-#darbuotojas {
-  min-width: 190px;
-  min-height: 47px;
-  border-width: var(--border-width-btn);
-  border-color: var(--border-color-btn);
-}
 .btn {
   text-decoration: none;
   padding: 12px 18px;
@@ -87,23 +94,32 @@ input::placeholder {
 }
 
 .primary-btn {
+  transition: 0.2s linear;
   background: var(--primary-btn-color);
 }
+.primary-btn:hover {
+  transition: 0.2s linear;
+  background: var(--primary-btn-color-hover);
+}
 .secondary-btn {
+  transition: 0.2s linear;
   background: var(--secondary-btn-color);
 }
-.container {
-  max-width: var(--container-width);
-  margin: auto;
+.secondary-btn:hover {
+  transition: 0.2s linear;
+  background: var(--secondary-btn-color-hover);
 }
 
-.darbuotojo-kontaktai {
-  display: inline-flex;
-}
 /* Uzsakymo numeris ir kontakai */
 .uzsakymas {
   display: flex;
   justify-content: space-between;
+}
+
+/* Form */
+form span {
+  display: inline-block;
+  min-width: 100px;
 }
 
 form > div:first-child,
@@ -112,45 +128,114 @@ form > div:nth-child(2) {
   justify-content: space-between;
 }
 
-#pradzia-vartotojo-pasirinkimas,
-#pabaiga-vartotojo-pasirinkimas,
-#el-pastas {
-  min-width: 224px;
-}
-.darbuotojo-kontaktai #darbuotojo-tel {
-  border-radius: var(--border-radius-btn) 0 0 var(--border-radius-btn);
-  border-width: var(--border-width-btn) 0 var(--border-width-btn)
-    var(--border-width-btn);
-}
-.darbuotojo-kontaktai .skambinti-btn {
-  border: 2px solid var(--border-color-btn);
-  border-width: var(--border-width-btn) var(--border-width-btn)
-    var(--border-width-btn) 0;
-  margin-left: -4px;
-}
-
-.pastabos-container {
+form .datos-is-serverio,
+form .datos-vartotojo {
   display: flex;
-  align-items: center;
-}
-.pastabos-container textarea {
-  width: 100%;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.pradzia-serveris,
-.pabaiga-serveris,
-.pradzia-vartotojas,
-.pabaiga-vartotojas,
-.pastabos-container,
+form .pradzia-serveris,
+form .pabaiga-serveris,
+form .pradzia-vartotojas,
+form .pabaiga-vartotojas,
+form .pastabos-container,
 form > div:nth-child(2) > div {
   display: flex;
   gap: 10px;
   align-items: center;
 }
 
-.datos-is-serverio,
-.datos-vartotojo {
+form #pradzia-vartotojo-pasirinkimas,
+form #pabaiga-vartotojo-pasirinkimas,
+form #el-pastas {
+  min-width: 224px;
+}
+
+form .darbuotojo-vardas-telefonas {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   gap: 10px;
+}
+
+form #darbuotojas {
+  min-width: 190px;
+  min-height: 47px;
+  border-width: var(--border-width-btn);
+  border-color: var(--border-color-btn);
+}
+form .darbuotojo-kontaktai {
+  display: inline-flex;
+}
+
+form .darbuotojo-kontaktai #darbuotojo-tel {
+  border-radius: var(--border-radius-btn) 0 0 var(--border-radius-btn);
+  border-width: var(--border-width-btn) 0 var(--border-width-btn)
+    var(--border-width-btn);
+}
+form .darbuotojo-kontaktai .skambinti-btn {
+  border: 2px solid var(--border-color-btn);
+  border-width: var(--border-width-btn) var(--border-width-btn)
+    var(--border-width-btn) 0;
+  margin-left: -4px;
+}
+
+form .pastabos-container {
+  display: flex;
+  align-items: center;
+}
+form .pastabos-container textarea {
+  width: 100%;
+}
+
+/* Media queries */
+@media (max-width: 900px) {
+  form > div:first-child,
+  form > div:nth-child(2) {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  form input {
+    width: 100%;
+  }
+  form .datos-vartotojo {
+    margin-top: 10px;
+  }
+  form #el-pastas {
+    margin-left: 110px;
+  }
+}
+
+@media (max-width: 600px) {
+  .uzsakymas {
+    flex-direction: column;
+  }
+  .uzsakymas > p {
+    margin-bottom: 20px;
+  }
+  form > div:nth-child(2) > div {
+    align-items: start;
+  }
+  form > div:nth-child(2) > div > span {
+    padding-top: 14px;
+  }
+  form .darbuotojo-vardas-telefonas {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  form .pradzia-serveris,
+  form .pabaiga-serveris,
+  form .pradzia-vartotojas,
+  form .pabaiga-vartotojas,
+  form > div:nth-child(2) > div,
+  form .pastabos-container {
+    flex-direction: column;
+    align-items: start;
+  }
+  form #el-pastas {
+    margin-left: 0;
+  }
 }
