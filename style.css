@@ -1,0 +1,83 @@
+:root {
+  --container-width: 1000px;
+  --primary-btn-color: #d9534f;
+  --secondary-btn-color: #428bca;
+  --text-color-white: #fff;
+  --text-color-black: #000;
+  --border-radius-btn: 5px;
+  --border-width-btn: 2px;
+  --border-color-btn: #7676764d;
+  --letter-spacing-btn: 0.1em;
+  --font-weight-btn: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-weight: 500;
+}
+
+form span {
+  display: inline-block;
+  min-width: 100px;
+}
+input,
+select {
+  padding: 12px 18px;
+  border-radius: var(--border-radius-btn);
+  border-color: var(--border-color-btn);
+}
+input:disabled {
+  background: transparent;
+}
+input::placeholder {
+  color: var(--text-color-black);
+}
+
+#darbuotojas {
+  min-width: 198px;
+  border-width: var(--border-width-btn);
+  border-color: var(--border-color-btn);
+}
+.btn {
+  text-decoration: none;
+  padding: 12px 18px;
+  display: inline-block;
+  border-radius: var(--border-radius-btn);
+  color: var(--text-color-white);
+  letter-spacing: var(--letter-spacing-btn);
+  font-weight: var(--font-weight-btn);
+  border-width: var(--border-width-btn);
+}
+
+.primary-btn {
+  background: var(--primary-btn-color);
+}
+.secondary-btn {
+  background: var(--secondary-btn-color);
+}
+.container {
+  max-width: var(--container-width);
+  margin: auto;
+}
+
+/* Uzsakymo numeris ir kontakai */
+.uzsakymas {
+  display: flex;
+  justify-content: space-between;
+}
+
+form > div:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+iframe {
+  width: 100%;
+  height: 500px;
+}

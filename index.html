@@ -3,9 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Aiva - Kalendoriaus registravimo forma</title>
   </head>
   <body>
-    <p>Test</p>
+    <div class="container">
+      <h1>
+        Užsakymo sąmatos pozicijos sukūrimas atlikus užduotį iš CRM darbų plano
+        Vardas Pavardė
+      </h1>
+      <a href="tel:+37060000000" class="btn primary-btn"> Skambinti </a>
+      <a href="tel:+37060000000" class="btn secondary-btn"> Fotografuoti </a>
+
+      <div class="uzsakymas">
+        <p>Užsakymo Nr. 0000000</p>
+        <div class="kontaktai">
+          <p>Aiva sistema, KŪB</p>
+          <p>Vardas, pavardė, pareigos</p>
+          <p>Telefono Nr.</p>
+          <p>El. paštas</p>
+          <p>Adresas</p>
+        </div>
+      </div>
+      <form>
+        <div>
+          <div class="datos-is-serverio">
+            <div class="pradzia-serveris">
+              <span>Pradžia:</span>
+              <input id="pradzia-data" placeholder="2024-00-00" disabled />
+              <input id="pradzia-laikas" placeholder="12:00" disabled />
+            </div>
+            <div class="pabaiga-serveris">
+              <span>Pabaiga:</span>
+              <input id="pabaiga-data" placeholder="2024-00-00" disabled />
+              <input id="pabaiga-laikas" placeholder="12:00" disabled />
+            </div>
+          </div>
+          <div class="datos-vartotojo">
+            <div class="pradzia-vartotojas">
+              <span>Pradžia:</span>
+              <input
+                type="datetime-local"
+                id="pradzia-vartotojo-pasirinkimas"
+              />
+            </div>
+            <div class="pabaiga-vartotojas">
+              <span>Pabaiga:</span>
+              <input
+                type="datetime-local"
+                id="pabaiga-vartotojo-pasirinkimas"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <span>Darbuotojas:</span>
+          <select id="darbuotojas" name="options">
+            <option value="" disabled selected>Vardas, Pavardė</option>
+            <option value="1">Vardenis, Pavardenis</option>
+            <option value="2">Vardenis, Pavardenis</option>
+            <option value="3">Vardenis, Pavardenis</option>
+          </select>
+          <input type="number" id="darbuotojo-tel" />
+        </div>
+      </form>
+      <!-- <iframe src="./Kalendoriaus registravimo forma.pdf"></iframe> -->
+    </div>
   </body>
 </html>
