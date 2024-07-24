@@ -207,6 +207,9 @@ form .pastabos-container textarea {
 }
 
 @media (max-width: 600px) {
+  h1 {
+    text-align: center;
+  }
   .uzsakymas {
     flex-direction: column;
   }
