@@ -181,7 +181,7 @@ form .darbuotojo-vardas-telefonas {
 }
 
 form #darbuotojas {
-  min-width: 190px;
+  min-width: 198px;
   min-height: 47px;
   border-width: var(--border-width-btn);
   border-color: var(--border-color-btn);
