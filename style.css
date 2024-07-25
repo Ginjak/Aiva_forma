@@ -167,6 +167,10 @@ form > div:nth-child(2) > div {
   gap: 10px;
   align-items: center;
 }
+form #pradzia-laikas,
+form #pabaiga-laikas {
+  max-width: 80px;
+}
 
 form #pradzia-vartotojo-pasirinkimas,
 form #pabaiga-vartotojo-pasirinkimas,
@@ -250,9 +254,6 @@ form .pastabos-container textarea {
     margin-bottom: 20px;
   }
 
-  .foto {
-    display: none;
-  }
   form > div:nth-child(2) > div {
     align-items: start;
   }
