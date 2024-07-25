@@ -54,6 +54,10 @@ input::placeholder {
 .border-0 {
   border: none;
 }
+
+.border-radius-var {
+  border-radius: var(--border-radius-btn);
+}
 .py-40 {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -68,6 +72,9 @@ input::placeholder {
 .mt-10 {
   margin-top: 10px;
 }
+.mt-20 {
+  margin-top: 20px;
+}
 .mb-8 {
   margin-bottom: 8px;
 }
@@ -79,6 +86,10 @@ input::placeholder {
 }
 .me-10 {
   margin-right: 10px;
+}
+
+.ms-110 {
+  margin-left: 110px;
 }
 
 .btn {
@@ -108,6 +119,17 @@ input::placeholder {
 .secondary-btn:hover {
   transition: 0.2s linear;
   background: var(--secondary-btn-color-hover);
+}
+
+.kontaktai-btn {
+  border: var(--border-width-btn) var(--text-color-black) solid;
+  color: var(--text-color-black);
+  transition: all 0.2s linear;
+}
+.kontaktai-btn:hover {
+  background-color: var(--text-color-black);
+  color: var(--text-color-white);
+  transition: all 0.2s linear;
 }
 
 /* Uzsakymo numeris ir kontakai */
@@ -159,26 +181,27 @@ form .darbuotojo-vardas-telefonas {
 }
 
 form #darbuotojas {
-  min-width: 198px;
+  min-width: 190px;
   min-height: 47px;
   border-width: var(--border-width-btn);
   border-color: var(--border-color-btn);
 }
-form .darbuotojo-kontaktai {
-  display: inline-flex;
-}
 
-form .darbuotojo-kontaktai #darbuotojo-tel {
+/* form .darbuotojo-kontaktai {
+  display: inline-flex;
+} */
+
+/* form .darbuotojo-kontaktai #darbuotojo-tel {
   border-radius: var(--border-radius-btn) 0 0 var(--border-radius-btn);
   border-width: var(--border-width-btn) 0 var(--border-width-btn)
     var(--border-width-btn);
-}
-form .darbuotojo-kontaktai .skambinti-btn {
+} */
+/* form .darbuotojo-kontaktai .skambinti-btn {
   border: 2px solid var(--border-color-btn);
   border-width: var(--border-width-btn) var(--border-width-btn)
     var(--border-width-btn) 0;
   margin-left: -4px;
-}
+} */
 
 form .pastabos-container {
   display: flex;
@@ -201,6 +224,16 @@ form .pastabos-container textarea {
   form .datos-vartotojo {
     margin-top: 10px;
   }
+  form .darbuotojo-vardas-telefonas {
+    width: 100%;
+  }
+  form #darbuotojas {
+    width: calc(100% - 34px);
+  }
+  form .darbuotojo-vardas-telefonas .darbuotojo-kontaktai {
+    width: 100%;
+  }
+
   form #el-pastas {
     margin-left: 110px;
   }
@@ -216,6 +249,10 @@ form .pastabos-container textarea {
   .uzsakymas > p {
     margin-bottom: 20px;
   }
+
+  .foto {
+    display: none;
+  }
   form > div:nth-child(2) > div {
     align-items: start;
   }
@@ -225,6 +262,18 @@ form .pastabos-container textarea {
   form .darbuotojo-vardas-telefonas {
     flex-direction: column;
     width: 100%;
+  }
+  form #darbuotojas {
+    width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .extra {
+    margin: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -239,6 +288,9 @@ form .pastabos-container textarea {
     align-items: start;
   }
   form #el-pastas {
+    margin-left: 0;
+  }
+  form .ms-110 {
     margin-left: 0;
   }
 }

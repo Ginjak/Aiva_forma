@@ -18,23 +18,31 @@
         Užsakymo sąmatos pozicijos sukūrimas atlikus užduotį iš CRM darbų plano
         Vardas Pavardė
       </h1>
-      <a href="tel:+37060000000" class="btn primary-btn mb-20 me-10">
+      <!-- <a href="tel:+37060000000" class="btn primary-btn mb-20 me-10">
         Skambinti
       </a>
       <a href="tel:+37060000000" class="btn secondary-btn mb-20">
         Fotografuoti
-      </a>
+      </a> -->
 
       <div class="uzsakymas mb-20">
-        <p>Užsakymo Nr. 0000000</p>
         <div class="kontaktai">
+          <p class="mb-20">Užsakymo Nr. 0000000</p>
           <p class="mb-8">Aiva sistema, KŪB</p>
           <p class="mb-8">Vardas, pavardė, pareigos</p>
           <p class="mb-8">Telefono Nr.</p>
           <p class="mb-8">El. paštas</p>
           <p class="mb-8">Adresas</p>
         </div>
+        <div class="foto">
+          <img
+            class="border-radius-var"
+            src="./face.webp"
+            alt="Darbuotojo nuotrauka"
+          />
+        </div>
       </div>
+
       <form>
         <div>
           <div class="datos-is-serverio">
@@ -83,9 +91,6 @@
                   placeholder="+370 60000000"
                   disabled
                 />
-                <a href="tel:+37060000000" class="btn primary-btn skambinti-btn"
-                  >Skambinti</a
-                >
               </div>
             </div>
           </div>
@@ -98,11 +103,126 @@
             />
           </div>
         </div>
+        <a
+          href="tel:+37060000000"
+          class="ms-110 btn kontaktai-btn mb-20 mt-20 me-10"
+        >
+          Skambinti
+        </a>
+        <a href="tel:+37060000000" class="btn kontaktai-btn mb-20 mt-20">
+          Fotografuoti
+        </a>
         <div class="pastabos-container mt-10 mb-40">
           <span>Pastabos:</span><textarea id="pastabos" rows="4"></textarea>
         </div>
+
         <button class="btn primary-btn border-0 me-10">Saugoti</button>
         <button class="btn secondary-btn border-0">Uždaryti</button>
+      </form>
+    </div>
+    <div class="container px-12 py-40">
+      <h1 class="mb-40">
+        Užsakymo sąmatos pozicijos sukūrimas atlikus užduotį iš CRM darbų plano
+        Vardas Pavardė
+      </h1>
+      <!-- <a href="tel:+37060000000" class="btn primary-btn mb-20 me-10">
+        Skambinti
+      </a>
+      <a href="tel:+37060000000" class="btn secondary-btn mb-20">
+        Fotografuoti
+      </a> -->
+
+      <div class="uzsakymas mb-20">
+        <div class="kontaktai">
+          <p class="mb-20">Užsakymo Nr. 0000000</p>
+          <p class="mb-8">Aiva sistema, KŪB</p>
+          <p class="mb-8">Vardas, pavardė, pareigos</p>
+          <p class="mb-8">Telefono Nr.</p>
+          <p class="mb-8">El. paštas</p>
+          <p class="mb-8">Adresas</p>
+        </div>
+        <div class="foto">
+          <img
+            class="border-radius-var"
+            src="./face.webp"
+            alt="Darbuotojo nuotrauka"
+          />
+        </div>
+      </div>
+
+      <form>
+        <div>
+          <div class="datos-is-serverio">
+            <div class="pradzia-serveris">
+              <span>Pradžia:</span>
+              <input id="pradzia-data" placeholder="2024-00-00" disabled />
+              <input id="pradzia-laikas" placeholder="12:00" disabled />
+            </div>
+            <div class="pabaiga-serveris">
+              <span>Pabaiga:</span>
+              <input id="pabaiga-data" placeholder="2024-00-00" disabled />
+              <input id="pabaiga-laikas" placeholder="12:00" disabled />
+            </div>
+          </div>
+          <div class="datos-vartotojo">
+            <div class="pradzia-vartotojas">
+              <span>Pradžia:</span>
+              <input
+                type="datetime-local"
+                id="pradzia-vartotojo-pasirinkimas"
+              />
+            </div>
+            <div class="pabaiga-vartotojas">
+              <span>Pabaiga:</span>
+              <input
+                type="datetime-local"
+                id="pabaiga-vartotojo-pasirinkimas"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="mt-10">
+            <span>Darbuotojas:</span>
+            <div class="darbuotojo-vardas-telefonas">
+              <select id="darbuotojas" name="options">
+                <option value="" disabled selected>Vardas, Pavardė</option>
+                <option value="1">Vardenis, Pavardenis</option>
+                <option value="2">Vardenis, Pavardenis</option>
+                <option value="3">Vardenis, Pavardenis</option>
+              </select>
+              <div class="darbuotojo-kontaktai">
+                <input
+                  type="number"
+                  id="darbuotojo-tel"
+                  placeholder="+370 60000000"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+          <div class="mt-10">
+            <input
+              type="email"
+              id="el-pastas"
+              placeholder="El. paštas"
+              disabled
+            />
+          </div>
+        </div>
+
+        <div class="pastabos-container mt-10 mb-40">
+          <span>Pastabos:</span><textarea id="pastabos" rows="4"></textarea>
+        </div>
+
+        <button class="extra btn primary-btn border-0 me-10">Saugoti</button>
+        <button class="extra btn secondary-btn border-0 me-10">Uždaryti</button>
+        <a href="tel:+37060000000" class="extra btn secondary-btn mb-20 me-10">
+          Skambinti
+        </a>
+        <a href="tel:+37060000000" class="extra btn secondary-btn mb-20">
+          Fotografuoti
+        </a>
       </form>
     </div>
   </body>
