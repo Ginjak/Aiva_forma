@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aiva - Kalendoriaus registravimo forma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link rel="stylesheet" href="./style2.css" />
+  </head>
+  <body>
+    <div class="container px-12 py-40">
+      <h1 class="mb-40">
+        Užsakymo sąmatos pozicijos sukūrimas atlikus užduotį iš CRM darbų plano
+        Vardas Pavardė
+      </h1>
+      <form id="forma">
+        <div class="uzsakymo-info-container mb-20">
+          <div class="uzsakymo-info">
+            <p class="uzsakymo-numeris">Užsakymo Nr. 0000000</p>
+            <p class="mb-8">Aiva sistema, KŪB</p>
+            <p class="mb-8">Vardas, pavardė, pareigos</p>
+            <p class="mb-8">Telefono Nr.</p>
+            <p class="mb-8">El. paštas</p>
+            <p class="mb-8">Adresas</p>
+          </div>
+          <div class="datos-container">
+            <div class="serverio-datos-container">
+              <div class="data-is-serverio">
+                <div class="pradzia">
+                  <span>Pradžia:</span>
+                  <input id="pradzia-data" placeholder="2024-00-00" disabled />
+                  <input id="pradzia-laikas" placeholder="12:00" disabled />
+                </div>
+                <div class="pabaiga">
+                  <span>Pabaiga:</span>
+                  <input id="pabaiga-data" placeholder="2024-00-00" disabled />
+                  <input id="pabaiga-laikas" placeholder="12:00" disabled />
+                </div>
+              </div>
+            </div>
+            <div class="vartotojo-datos-container">
+              <div class="vartotojas-pradzia">
+                <span>Pradžia:</span>
+                <input
+                  type="text"
+                  id="datetime-picker-start"
+                  class="datetime-picker"
+                  placeholder="Data/Laikas"
+                />
+              </div>
+              <div class="vartotojas-pabaiga">
+                <span>Pabaiga:</span>
+                <input
+                  type="text"
+                  id="datetime-picker-end"
+                  class="datetime-picker"
+                  placeholder="Data/Laikas"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="darbuotojas-container">
+          <span> Darbuotojas:</span>
+          <div class="kontaktai">
+            <div class="darbuotojo-kontaktai">
+              <select id="darbuotojas" name="options">
+                <option value="" disabled selected>Vardas, Pavardė</option>
+                <option value="1">Vardenis, Pavardenis</option>
+                <option value="2">Vardenis, Pavardenis</option>
+                <option value="3">Vardenis, Pavardenis</option>
+              </select>
+
+              <input
+                type="number"
+                id="darbuotojo-tel"
+                placeholder="+370 60000000"
+                disabled
+              />
+              <input
+                type="email"
+                id="el-pastas"
+                placeholder="El. paštas"
+                disabled
+              />
+            </div>
+          </div>
+        </div>
+        <div class="pastabos-container mt-10 mb-40">
+          <span>Pastabos:</span><textarea id="pastabos" rows="4"></textarea>
+        </div>
+        <a href="/" class="btn primary-btn border-0 me-10">Saugoti</a>
+        <a href="/" class="btn secondary-btn border-0 me-10">Uždaryti</a>
+        <a href="tel:+37060000000" class="btn secondary-btn mb-20 me-10">
+          Skambinti
+        </a>
+        <a href="tel:+37060000000" class="btn secondary-btn mb-20">
+          Fotografuoti
+        </a>
+      </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,234 @@
+:root {
+  --heading-font-size: clamp(24px, 4vw, 36px);
+  --container-width: 1000px;
+  --primary-btn-color: #d9534f;
+  --primary-btn-color-hover: #c2332e;
+  --secondary-btn-color: #428bca;
+  --secondary-btn-color-hover: #2670b1;
+  --text-color-white: #fff;
+  --text-color-black: #000;
+  --border-radius-btn: 5px;
+  --border-width-btn: 2px;
+  --border-color-btn: #7676764d;
+  --letter-spacing-btn: 0.1em;
+  --font-weight-btn: 400;
+  --font-size-btn: 16px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+h1 {
+  font-size: var(--heading-font-size);
+  font-weight: 500;
+}
+button {
+  cursor: pointer;
+}
+input,
+select,
+textarea {
+  padding: 12px 18px;
+  border-radius: var(--border-radius-btn);
+  border-color: var(--border-color-btn);
+  border-width: var(--border-width-btn);
+  /* min-height: 47px; */
+}
+input:disabled {
+  background: #f5f5f5;
+}
+input::placeholder {
+  color: var(--text-color-black);
+}
+
+/* Utilities */
+.container {
+  max-width: var(--container-width);
+  margin: auto;
+}
+
+.px-12 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.py-40 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.mb-8 {
+  margin-bottom: 8px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-40 {
+  margin-bottom: 40px;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 12px 18px;
+  display: inline-block;
+  border-radius: var(--border-radius-btn);
+  color: var(--text-color-white);
+  letter-spacing: var(--letter-spacing-btn);
+  font-weight: var(--font-weight-btn);
+  border-width: var(--border-width-btn);
+  font-size: var(--font-size-btn);
+}
+
+.primary-btn {
+  transition: 0.2s linear;
+  background: var(--primary-btn-color);
+}
+.primary-btn:hover {
+  transition: 0.2s linear;
+  background: var(--primary-btn-color-hover);
+}
+.secondary-btn {
+  transition: 0.2s linear;
+  background: var(--secondary-btn-color);
+}
+.secondary-btn:hover {
+  transition: 0.2s linear;
+  background: var(--secondary-btn-color-hover);
+}
+
+#forma .uzsakymo-info-container {
+  display: flex;
+  justify-content: space-between;
+}
+#forma .uzsakymo-numeris {
+  height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+#forma .datos-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+#forma .data-is-serverio,
+#forma .vartotojo-datos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#forma .pradzia,
+#forma .pabaiga,
+#forma .vartotojas-pradzia,
+#forma .vartotojas-pabaiga {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+#forma span {
+  min-width: 80px;
+  display: inline-block;
+}
+
+#forma #pradzia-data,
+#forma #pabaiga-data {
+  width: 110px;
+}
+#forma #pradzia-laikas,
+#forma #pabaiga-laikas {
+  width: 80px;
+}
+
+#forma #datetime-picker-start,
+#forma #datetime-picker-end {
+  width: 150px;
+}
+
+/* Forma - Darbuotojo info */
+#forma .darbuotojas-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#forma .darbuotojo-kontaktai {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#forma .kontaktai {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Forma - Pastabos */
+#forma .pastabos-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+#forma .pastabos-container span {
+  min-width: 100px;
+}
+#forma .pastabos-container textarea {
+  width: 100%;
+}
+
+/* Media queries */
+@media (max-width: 800px) {
+  #forma .uzsakymo-info-container {
+    flex-direction: column;
+  }
+  #forma .uzsakymo-info {
+    margin-bottom: 20px;
+  }
+  #forma .darbuotojas-container {
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  }
+
+  #forma .pastabos-container {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+@media (max-width: 500px) {
+  #forma .serverio-datos-container,
+  #forma .vartotojo-datos-container {
+    width: 100%;
+  }
+  #forma .pradzia,
+  #forma .pabaiga,
+  #forma .vartotojas-pradzia,
+  #forma .vartotojas-pabaiga {
+    flex-direction: column;
+    align-items: start;
+  }
+  #forma #pradzia-data,
+  #forma #pradzia-laikas,
+  #forma #pabaiga-data,
+  #forma #pabaiga-laikas,
+  #forma #datetime-picker-start,
+  #forma #datetime-picker-end {
+    width: 100%;
+  }
+  #forma #darbuotojas,
+  #forma #darbuotojo-tel,
+  #forma #el-pastas {
+    width: 100%;
+  }
+  #forma .btn {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}

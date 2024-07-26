@@ -9,6 +9,12 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
+    Usage
     <link rel="stylesheet" href="./style.css" />
     <title>Aiva - Kalendoriaus registravimo forma</title>
   </head>
@@ -131,6 +137,109 @@
       <a href="tel:+37060000000" class="btn secondary-btn mb-20">
         Fotografuoti
       </a> -->
+      <form>
+        <div class="uzsakymas mb-20">
+          <div class="kontaktai">
+            <p class="mb-20">Užsakymo Nr. 0000000</p>
+            <p class="mb-8">Aiva sistema, KŪB</p>
+            <p class="mb-8">Vardas, pavardė, pareigos</p>
+            <p class="mb-8">Telefono Nr.</p>
+            <p class="mb-8">El. paštas</p>
+            <p class="mb-8">Adresas</p>
+          </div>
+          <div class="pradzia-pabaiga">
+            <div class="datos-is-serverio">
+              <div class="pradzia-serveris">
+                <span>Pradžia:</span>
+                <input id="pradzia-data" placeholder="2024-00-00" disabled />
+                <input id="pradzia-laikas" placeholder="12:00" disabled />
+              </div>
+              <div class="pabaiga-serveris">
+                <span>Pabaiga:</span>
+                <input id="pabaiga-data" placeholder="2024-00-00" disabled />
+                <input id="pabaiga-laikas" placeholder="12:00" disabled />
+              </div>
+            </div>
+
+            <div class="datos-vartotojo">
+              <div class="pradzia-vartotojas">
+                <span>Pradžia:</span>
+                <input
+                  type="datetime-local"
+                  id="pradzia-vartotojo-pasirinkimas"
+                />
+              </div>
+              <div class="pabaiga-vartotojas">
+                <span>Pabaiga:</span>
+                <input
+                  type="datetime-local"
+                  id="pabaiga-vartotojo-pasirinkimas"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+        <div>
+          <div class="mt-10">
+            <span>Darbuotojas:</span>
+            <div class="darbuotojo-vardas-telefonas">
+              <select id="darbuotojas" name="options">
+                <option value="" disabled selected>Vardas, Pavardė</option>
+                <option value="1">Vardenis, Pavardenis</option>
+                <option value="2">Vardenis, Pavardenis</option>
+                <option value="3">Vardenis, Pavardenis</option>
+              </select>
+              <div class="darbuotojo-kontaktai">
+                <input
+                  type="number"
+                  id="darbuotojo-tel"
+                  placeholder="+370 60000000"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+          <div class="mt-10">
+            <input
+              type="email"
+              id="el-pastas"
+              placeholder="El. paštas"
+              disabled
+            />
+          </div>
+        </div>
+
+        <div class="pastabos-container mt-10 mb-40">
+          <span>Pastabos:</span><textarea id="pastabos" rows="4"></textarea>
+        </div>
+
+        <button class="extra btn primary-btn border-0 me-10">Saugoti</button>
+        <button class="extra btn secondary-btn border-0 me-10">Uždaryti</button>
+        <a href="tel:+37060000000" class="extra btn secondary-btn mb-20 me-10">
+          Skambinti
+        </a>
+        <a href="tel:+37060000000" class="extra btn secondary-btn mb-20">
+          Fotografuoti
+        </a>
+      </form>
+      <input
+        type="text"
+        id="datetime-picker"
+        placeholder="Select Date and Time"
+      />
+    </div>
+    <div class="container px-12 py-40">
+      <h1 class="mb-40">
+        Užsakymo sąmatos pozicijos sukūrimas atlikus užduotį iš CRM darbų plano
+        Vardas Pavardė
+      </h1>
+      <!-- <a href="tel:+37060000000" class="btn primary-btn mb-20 me-10">
+        Skambinti
+      </a>
+      <a href="tel:+37060000000" class="btn secondary-btn mb-20">
+        Fotografuoti
+      </a> -->
 
       <div class="uzsakymas mb-20">
         <div class="kontaktai">
@@ -218,6 +327,15 @@
         </a>
       </form>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        flatpickr("#datetime-picker", {
+          enableTime: true,
+          dateFormat: "Y-m-d H:i",
+        });
+      });
+    </script>
     <script src="./script.js"></script>
   </body>
 </html>

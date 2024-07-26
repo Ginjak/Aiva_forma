@@ -215,6 +215,21 @@ form .pastabos-container textarea {
   width: 100%;
 }
 
+.pradzia-pabaiga {
+  display: flex;
+  gap: 10px;
+}
+
+form #pradzia-laikas,
+form #pabaiga-laikas,
+form #pradzia-data,
+form #pabaiga-data {
+  max-width: 120px;
+  text-align: center;
+}
+form span {
+  min-width: 80px;
+}
 /* Media queries */
 @media (max-width: 900px) {
   form > div:first-child,
