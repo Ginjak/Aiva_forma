@@ -34,7 +34,6 @@ textarea {
   border-radius: var(--border-radius-btn);
   border-color: var(--border-color-btn);
   border-width: var(--border-width-btn);
-  /* min-height: 47px; */
 }
 input:disabled {
   background: #f5f5f5;
@@ -100,6 +99,7 @@ input::placeholder {
   background: var(--secondary-btn-color-hover);
 }
 
+/* Forma uzsakymo informacija */
 #forma .uzsakymo-info-container {
   display: flex;
   justify-content: space-between;
@@ -110,6 +110,7 @@ input::placeholder {
   align-items: center;
 }
 
+/* Forma datos */
 #forma .datos-container {
   display: flex;
   gap: 20px;
