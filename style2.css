@@ -200,7 +200,7 @@ input::placeholder {
   display: flex;
   gap: 10px;
 }
-.
+
 /* #forma .darbuotojo-kontaktai {
   display: flex;
   gap: 10px;
@@ -212,7 +212,6 @@ input::placeholder {
   align-items: center;
   gap: 10px;
 } */
-
 
 /* Media queries */
 @media (max-width: 800px) {
