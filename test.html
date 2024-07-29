@@ -22,56 +22,120 @@
         Užsakymo sąmatos pozicijos sukūrimas atlikus užduotį iš CRM darbų plano
         Vardas Pavardė
       </h1>
+      <p class="subtitle mb-20">Suremontioti priešgaisrinę signalizaciją</p>
       <form id="forma">
         <div class="uzsakymo-info-container mb-20">
           <div class="uzsakymo-info">
-            <p class="uzsakymo-numeris">Užsakymo Nr. 0000000</p>
+            <p class="uzsakymo-numeris mb-20">Užsakymo Nr. 0000000</p>
             <p class="mb-8">Aiva sistema, KŪB</p>
-            <p class="mb-8">Vardas, pavardė, pareigos</p>
-            <p class="mb-8">Telefono Nr.</p>
-            <p class="mb-8">El. paštas</p>
-            <p class="mb-8">Adresas</p>
+            <p class="mb-8">
+              <span class="uzsak-title">Adresas</span
+              ><strong>Aguonų 6, Vilnius</strong>
+            </p>
+            <p class="mb-8">
+              <span class="uzsak-title">Atstovas</span
+              ><strong>Augustinas Petraitis</strong>
+            </p>
+            <p class="mb-8">
+              <span class="uzsak-title">Telefono Nr.</span
+              ><strong>8 69802977</strong>
+            </p>
+            <p class="mb-8">
+              <span class="uzsak-title">El. paštas</span
+              ><strong>Augustintas.petraitis@gmail.com</strong>
+            </p>
           </div>
-          <div class="datos-container">
-            <div class="serverio-datos-container">
-              <div class="data-is-serverio">
-                <div class="pradzia">
-                  <span>Pradžia:</span>
-                  <input id="pradzia-data" placeholder="2024-00-00" disabled />
-                  <input id="pradzia-laikas" placeholder="12:00" disabled />
-                </div>
-                <div class="pabaiga">
-                  <span>Pabaiga:</span>
-                  <input id="pabaiga-data" placeholder="2024-00-00" disabled />
-                  <input id="pabaiga-laikas" placeholder="12:00" disabled />
-                </div>
+          <div class="uzsakymo-info">
+            <p class="uzsakymo-numeris mb-20">Darbo charakteristikos:</p>
+            <p class="mb-8">
+              <span class="uzsak-title">Objektas:</span
+              ><strong>Sandėlis Savanorių pr. 250</strong>
+            </p>
+            <p class="mb-8">
+              <span class="uzsak-title">Durų kodas</span><strong>124356</strong>
+            </p>
+            <p class="mb-8">
+              <span class="uzsak-title">....</span><strong>....</strong>
+            </p>
+            <p class="mb-8">
+              <span class="uzsak-title">....</span><strong>....</strong>
+            </p>
+            <p class="mb-8">
+              <span class="uzsak-title">....</span><strong>....</strong>
+            </p>
+          </div>
+        </div>
+        <div class="datos-container mb-20">
+          <div class="serverio-datos-container">
+            <div class="data-is-serverio">
+              <p class="datos-title">Planuojamas laikas</p>
+              <div class="pradzia">
+                <span class="uzsak-title">Pradžia:</span>
+                <input id="pradzia-data" placeholder="2024-00-00" disabled />
+                <input id="pradzia-laikas" placeholder="12:00" disabled />
+              </div>
+              <div class="pabaiga">
+                <span class="uzsak-title">Pabaiga:</span>
+                <input id="pabaiga-data" placeholder="2024-00-00" disabled />
+                <input id="pabaiga-laikas" placeholder="12:00" disabled />
               </div>
             </div>
-            <div class="vartotojo-datos-container">
-              <div class="vartotojas-pradzia">
-                <span>Pradžia:</span>
-                <input
-                  type="text"
-                  id="datetime-picker-start"
-                  class="datetime-picker"
-                  placeholder="Data/Laikas"
-                />
-              </div>
-              <div class="vartotojas-pabaiga">
-                <span>Pabaiga:</span>
-                <input
-                  type="text"
-                  id="datetime-picker-end"
-                  class="datetime-picker"
-                  placeholder="Data/Laikas"
-                />
-              </div>
+          </div>
+          <div class="vartotojo-datos-container">
+            <p class="datos-title">Faktinis vykdymo laikas</p>
+            <div class="vartotojas-pradzia">
+              <input
+                type="text"
+                id="datetime-picker-start"
+                class="datetime-picker"
+                placeholder="Registruoti pradžią"
+              />
+              <input
+                id="faktinis-pradzia"
+                class="faktinis-laikas"
+                type="text"
+                disabled
+              />
+            </div>
+            <div class="vartotojas-pabaiga">
+              <input
+                type="text"
+                id="datetime-picker-end"
+                class="datetime-picker"
+                placeholder="Registruoti pabaigą"
+              />
+              <input
+                id="faktinis-pabaiga"
+                class="faktinis-laikas"
+                type="text"
+                disabled
+              />
             </div>
           </div>
         </div>
-        <div class="darbuotojas-container">
-          <span> Darbuotojas:</span>
-          <div class="kontaktai">
+
+        <div class="darbuotojas-container mb-20">
+          <div class="vykdytojas-container">
+            <span class="uzsak-title"> Pasirinkti vykdytoją</span>
+            <select id="darbuotojas" name="options">
+              <option value="" disabled selected>Vardas, Pavardė</option>
+              <option value="1">Augustinas Petraitis</option>
+              <option value="2">Augustinas Petraitis</option>
+              <option value="3">Vardenis, Pavardenis</option>
+            </select>
+          </div>
+          <div class="siusti-uzduoti-skambinti-container">
+            <a
+              href="mailto:Augustintas.petraitis@gmail.com"
+              class="btn secondary-btn me-10"
+            >
+              Siųsti vykdytojui
+            </a>
+            <a href="tel:+37060000000" class="btn secondary-btn me-10">
+              Skambinti
+            </a>
+          </div>
+          <!-- <div class="kontaktai">
             <div class="darbuotojo-kontaktai">
               <select id="darbuotojas" name="options">
                 <option value="" disabled selected>Vardas, Pavardė</option>
@@ -93,19 +157,20 @@
                 disabled
               />
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="pastabos-container mt-10 mb-40">
           <span>Pastabos:</span><textarea id="pastabos" rows="4"></textarea>
         </div>
-        <a href="/" class="btn primary-btn border-0 me-10">Saugoti</a>
-        <a href="/" class="btn secondary-btn border-0 me-10">Uždaryti</a>
-        <a href="tel:+37060000000" class="btn secondary-btn mb-20 me-10">
-          Skambinti
-        </a>
-        <a href="tel:+37060000000" class="btn secondary-btn mb-20">
-          Fotografuoti
-        </a>
+        <div class="mytgtukai-container">
+          <a href="tel:+37060000000" class="btn secondary-btn mb-20">
+            Fotografuoti
+          </a>
+          <div class="saugoti-uzdaryti-container">
+            <a href="/" class="btn primary-btn border-0 me-10">Saugoti</a>
+            <a href="/" class="btn secondary-btn border-0 me-10">Uždaryti</a>
+          </div>
+        </div>
       </form>
     </div>
 

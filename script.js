@@ -6,16 +6,22 @@ document.addEventListener("DOMContentLoaded", function () {
   const formattedDate =
     now.toISOString().slice(0, 10) + " " + now.toTimeString().slice(0, 5);
 
-  const datePickers = document.querySelectorAll(".datetime-picker");
-  datePickers.forEach((picker) => {
-    picker.placeholder = formattedDate;
-  });
-
+  // const datePickers = document.querySelectorAll(".datetime-picker");
+  // datePickers.forEach((picker) => {
+  //   picker.placeholder = formattedDate;
+  // });
   flatpickr(".datetime-picker", {
     enableTime: true,
     dateFormat: "Y-m-d H:i",
     time_24hr: true,
-    defaultDate: formattedDate,
+    onChange: function (selectedDates, dateStr, instance) {
+      const inputId = instance.input.id;
+      if (inputId === "datetime-picker-start") {
+        document.getElementById("faktinis-pradzia").value = dateStr;
+      } else if (inputId === "datetime-picker-end") {
+        document.getElementById("faktinis-pabaiga").value = dateStr;
+      }
+    },
   });
 });
 

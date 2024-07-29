@@ -57,6 +57,7 @@ input::placeholder {
   padding-top: 40px;
   padding-bottom: 40px;
 }
+
 .mb-8 {
   margin-bottom: 8px;
 }
@@ -70,6 +71,10 @@ input::placeholder {
   margin-top: 10px;
 }
 
+.datos-title {
+  text-align: center;
+  padding-left: 100px;
+}
 .btn {
   text-decoration: none;
   padding: 12px 18px;
@@ -99,22 +104,26 @@ input::placeholder {
   background: var(--secondary-btn-color-hover);
 }
 
+.subtitle {
+  font-size: 24px;
+}
+
 /* Forma uzsakymo informacija */
 #forma .uzsakymo-info-container {
   display: flex;
   justify-content: space-between;
 }
-#forma .uzsakymo-numeris {
-  height: 44px;
-  display: flex;
-  align-items: center;
+
+#forma .uzsak-title {
+  width: 100px;
+  max-width: 100px;
+  line-height: 1.2;
 }
 
 /* Forma datos */
 #forma .datos-container {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 #forma .data-is-serverio,
@@ -122,6 +131,10 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+#forma .vartotojo-datos-container .datos-title {
+  padding-left: 160px;
 }
 #forma .pradzia,
 #forma .pabaiga,
@@ -146,8 +159,28 @@ input::placeholder {
 }
 
 #forma #datetime-picker-start,
-#forma #datetime-picker-end {
-  width: 150px;
+#forma #datetime-picker-end,
+#forma .faktinis-laikas {
+  width: 160px;
+}
+
+/* Forma - Pastabos */
+.pastabos-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+#forma .pastabos-container span {
+  min-width: 100px;
+}
+#forma .pastabos-container textarea {
+  width: 100%;
+}
+/* Mygtukai container pacioje */
+.mytgtukai-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Forma - Darbuotojo info */
@@ -157,7 +190,18 @@ input::placeholder {
   align-items: center;
 }
 
-#forma .darbuotojo-kontaktai {
+#forma .vykdytojas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+#forma .siusti-uzduoti-skambinti-container {
+  display: flex;
+  gap: 10px;
+}
+.
+/* #forma .darbuotojo-kontaktai {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
@@ -167,20 +211,8 @@ input::placeholder {
   display: flex;
   align-items: center;
   gap: 10px;
-}
+} */
 
-/* Forma - Pastabos */
-#forma .pastabos-container {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-#forma .pastabos-container span {
-  min-width: 100px;
-}
-#forma .pastabos-container textarea {
-  width: 100%;
-}
 
 /* Media queries */
 @media (max-width: 800px) {
