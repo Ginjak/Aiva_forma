@@ -14,14 +14,12 @@
   --font-weight-btn: 400;
   --font-size-btn: 16px;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
-
 h1 {
   font-size: var(--heading-font-size);
   font-weight: 500;
@@ -36,10 +34,9 @@ textarea {
   border-radius: var(--border-radius-btn);
   border-color: var(--border-color-btn);
   border-width: var(--border-width-btn);
-  min-height: 47px;
 }
 input:disabled {
-  background: transparent;
+  background: #f5f5f5;
 }
 input::placeholder {
   color: var(--text-color-black);
@@ -51,30 +48,16 @@ input::placeholder {
   margin: auto;
 }
 
-.border-0 {
-  border: none;
-}
-
-.border-radius-var {
-  border-radius: var(--border-radius-btn);
-}
-.py-40 {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
 .px-12 {
   padding-left: 12px;
   padding-right: 12px;
 }
-.mt-5 {
-  margin-top: 5px;
+
+.py-40 {
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
-.mt-10 {
-  margin-top: 10px;
-}
-.mt-20 {
-  margin-top: 20px;
-}
+
 .mb-8 {
   margin-bottom: 8px;
 }
@@ -84,14 +67,19 @@ input::placeholder {
 .mb-40 {
   margin-bottom: 40px;
 }
-.me-10 {
-  margin-right: 10px;
+.mt-10 {
+  margin-top: 10px;
 }
 
-.ms-110 {
-  margin-left: 110px;
+.divider {
+  height: 2px;
+  background: var(--border-color-btn);
+  margin-bottom: 20px;
 }
-
+.datos-title {
+  text-align: center;
+  padding-left: 100px;
+}
 .btn {
   text-decoration: none;
   padding: 12px 18px;
@@ -121,192 +109,190 @@ input::placeholder {
   background: var(--secondary-btn-color-hover);
 }
 
-.kontaktai-btn {
-  border: var(--border-width-btn) var(--text-color-black) solid;
-  color: var(--text-color-black);
-  transition: all 0.2s linear;
-}
-.kontaktai-btn:hover {
-  background-color: var(--text-color-black);
-  color: var(--text-color-white);
-  transition: all 0.2s linear;
+.subtitle {
+  font-size: 24px;
 }
 
-/* Uzsakymo numeris ir kontakai */
-.uzsakymas {
+/* Forma uzsakymo informacija */
+#forma .uzsakymo-info-container {
   display: flex;
   justify-content: space-between;
 }
 
-/* Form */
-form span {
-  display: inline-block;
-  min-width: 100px;
+#forma .uzsak-title {
+  width: 100px;
+  max-width: 100px;
+  line-height: 1.2;
 }
 
-form > div:first-child,
-form > div:nth-child(2) {
+/* Forma datos */
+#forma .datos-container {
   display: flex;
   justify-content: space-between;
 }
 
-form .datos-is-serverio,
-form .datos-vartotojo {
+#forma .data-is-serverio,
+#forma .vartotojo-datos-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-form .pradzia-serveris,
-form .pabaiga-serveris,
-form .pradzia-vartotojas,
-form .pabaiga-vartotojas,
-form .pastabos-container,
-form > div:nth-child(2) > div {
+#forma .vartotojo-datos-container .datos-title {
+  padding-left: 160px;
+}
+#forma .pradzia,
+#forma .pabaiga,
+#forma .vartotojas-pradzia,
+#forma .vartotojas-pabaiga {
   display: flex;
   gap: 10px;
   align-items: center;
 }
-form #pradzia-laikas,
-form #pabaiga-laikas {
-  max-width: 80px;
+#forma span {
+  min-width: 80px;
+  display: inline-block;
 }
 
-form #pradzia-vartotojo-pasirinkimas,
-form #pabaiga-vartotojo-pasirinkimas,
-form #el-pastas {
-  min-width: 224px;
+#forma #pradzia-data,
+#forma #pabaiga-data {
+  width: 110px;
+}
+#forma #pradzia-laikas,
+#forma #pabaiga-laikas {
+  width: 80px;
 }
 
-form .darbuotojo-vardas-telefonas {
+#forma #datetime-picker-start,
+#forma #datetime-picker-end,
+#forma .faktinis-laikas {
+  width: 160px;
+}
+
+/* Forma - Pastabos */
+.pastabos-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
   gap: 10px;
 }
-
-form #darbuotojas {
-  min-width: 198px;
-  min-height: 47px;
-  border-width: var(--border-width-btn);
-  border-color: var(--border-color-btn);
+#forma .pastabos-container span {
+  min-width: 100px;
 }
-
-/* form .darbuotojo-kontaktai {
-  display: inline-flex;
-} */
-
-/* form .darbuotojo-kontaktai #darbuotojo-tel {
-  border-radius: var(--border-radius-btn) 0 0 var(--border-radius-btn);
-  border-width: var(--border-width-btn) 0 var(--border-width-btn)
-    var(--border-width-btn);
-} */
-/* form .darbuotojo-kontaktai .skambinti-btn {
-  border: 2px solid var(--border-color-btn);
-  border-width: var(--border-width-btn) var(--border-width-btn)
-    var(--border-width-btn) 0;
-  margin-left: -4px;
-} */
-
-form .pastabos-container {
-  display: flex;
-  align-items: center;
-}
-form .pastabos-container textarea {
+#forma .pastabos-container textarea {
   width: 100%;
 }
+/* Mygtukai container pacioje */
+#forma .mytgtukai-container {
+  display: flex;
+  justify-content: space-between;
+}
 
-.pradzia-pabaiga {
+#forma .saugoti-uzdaryti-container {
+  gap: 10px;
+  display: flex;
+}
+
+/* Forma - Darbuotojo info */
+#forma .darbuotojas-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#forma .vykdytojas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+#forma .siusti-uzduoti-skambinti-container {
   display: flex;
   gap: 10px;
 }
 
-form #pradzia-laikas,
-form #pabaiga-laikas,
-form #pradzia-data,
-form #pabaiga-data {
-  max-width: 120px;
-  text-align: center;
-}
-form span {
-  min-width: 80px;
-}
 /* Media queries */
-@media (max-width: 900px) {
-  form > div:first-child,
-  form > div:nth-child(2) {
+@media (max-width: 800px) {
+  #forma .uzsakymo-info-container {
     flex-direction: column;
-    justify-content: space-between;
   }
-  form input {
-    width: 100%;
+  #forma .uzsakymo-info {
+    margin-bottom: 20px;
   }
-  form .datos-vartotojo {
-    margin-top: 10px;
-  }
-  form .darbuotojo-vardas-telefonas {
-    width: 100%;
-  }
-  form #darbuotojas {
-    width: calc(100% - 34px);
-  }
-  form .darbuotojo-vardas-telefonas .darbuotojo-kontaktai {
-    width: 100%;
+  #forma .darbuotojas-container {
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
   }
 
-  form #el-pastas {
-    margin-left: 110px;
+  #forma .pastabos-container {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+@media (max-width: 675px) {
+  #forma .datos-container {
+    flex-direction: column;
+  }
+  #forma .serverio-datos-container {
+    margin-bottom: 40px;
+  }
+  #forma .vartotojo-datos-container {
+    margin-bottom: 20px;
+  }
+  #forma .datos-title {
+    padding-left: 110px;
+    text-align: start;
+  }
+  #forma .vartotojo-datos-container .datos-title {
+    padding-left: 110px;
   }
 }
 
 @media (max-width: 600px) {
-  h1 {
-    text-align: center;
+  #forma .serverio-datos-container,
+  #forma .vartotojo-datos-container,
+  #forma .faktinis-laikas,
+  #forma .vykdytojas-container,
+  #forma .vykdytojas-container .uzsak-title {
+    width: 100%;
+    max-width: 100%;
   }
-  .uzsakymas {
+  #forma .pradzia,
+  #forma .pabaiga,
+  #forma .vartotojas-pradzia,
+  #forma .vartotojas-pabaiga,
+  #forma .vykdytojas-container {
     flex-direction: column;
-  }
-  .uzsakymas > p {
-    margin-bottom: 20px;
-  }
-
-  form > div:nth-child(2) > div {
     align-items: start;
   }
-  form > div:nth-child(2) > div > span {
-    padding-top: 14px;
-  }
-  form .darbuotojo-vardas-telefonas {
-    flex-direction: column;
+  #forma #pradzia-data,
+  #forma #pradzia-laikas,
+  #forma #pabaiga-data,
+  #forma #pabaiga-laikas,
+  #forma #datetime-picker-start,
+  #forma #datetime-picker-end {
     width: 100%;
   }
-  form #darbuotojas {
+  #forma #darbuotojas,
+  #forma #darbuotojo-tel,
+  #forma #el-pastas {
     width: 100%;
   }
-}
-
-@media (max-width: 550px) {
-  .extra {
-    margin: 0;
+  #forma .btn {
+    display: block;
     margin-bottom: 10px;
-    width: 100%;
     text-align: center;
   }
 }
 
 @media (max-width: 400px) {
-  form .pradzia-serveris,
-  form .pabaiga-serveris,
-  form .pradzia-vartotojas,
-  form .pabaiga-vartotojas,
-  form > div:nth-child(2) > div,
-  form .pastabos-container {
+  #forma .mytgtukai-container,
+  #forma .saugoti-uzdaryti-container,
+  #forma .siusti-uzduoti-skambinti-container {
     flex-direction: column;
-    align-items: start;
-  }
-  form #el-pastas {
-    margin-left: 0;
-  }
-  form .ms-110 {
-    margin-left: 0;
+    gap: 0;
+    width: 100%;
   }
 }
