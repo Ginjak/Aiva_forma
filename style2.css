@@ -71,6 +71,11 @@ input::placeholder {
   margin-top: 10px;
 }
 
+.divider {
+  height: 2px;
+  background: var(--border-color-btn);
+  margin-bottom: 20px;
+}
 .datos-title {
   text-align: center;
   padding-left: 100px;
@@ -178,9 +183,14 @@ input::placeholder {
   width: 100%;
 }
 /* Mygtukai container pacioje */
-.mytgtukai-container {
+#forma .mytgtukai-container {
   display: flex;
   justify-content: space-between;
+}
+
+#forma .saugoti-uzdaryti-container {
+  gap: 10px;
+  display: flex;
 }
 
 /* Forma - Darbuotojo info */
@@ -200,18 +210,6 @@ input::placeholder {
   display: flex;
   gap: 10px;
 }
-
-/* #forma .darbuotojo-kontaktai {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-#forma .kontaktai {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-} */
 
 /* Media queries */
 @media (max-width: 800px) {
@@ -233,15 +231,39 @@ input::placeholder {
   }
 }
 
-@media (max-width: 500px) {
-  #forma .serverio-datos-container,
+@media (max-width: 675px) {
+  #forma .datos-container {
+    flex-direction: column;
+  }
+  #forma .serverio-datos-container {
+    margin-bottom: 40px;
+  }
   #forma .vartotojo-datos-container {
+    margin-bottom: 20px;
+  }
+  #forma .datos-title {
+    padding-left: 110px;
+    text-align: start;
+  }
+  #forma .vartotojo-datos-container .datos-title {
+    padding-left: 110px;
+  }
+}
+
+@media (max-width: 600px) {
+  #forma .serverio-datos-container,
+  #forma .vartotojo-datos-container,
+  #forma .faktinis-laikas,
+  #forma .vykdytojas-container,
+  #forma .vykdytojas-container .uzsak-title {
     width: 100%;
+    max-width: 100%;
   }
   #forma .pradzia,
   #forma .pabaiga,
   #forma .vartotojas-pradzia,
-  #forma .vartotojas-pabaiga {
+  #forma .vartotojas-pabaiga,
+  #forma .vykdytojas-container {
     flex-direction: column;
     align-items: start;
   }
@@ -262,5 +284,15 @@ input::placeholder {
     display: block;
     margin-bottom: 10px;
     text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  #forma .mytgtukai-container,
+  #forma .saugoti-uzdaryti-container,
+  #forma .siusti-uzduoti-skambinti-container {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
   }
 }
